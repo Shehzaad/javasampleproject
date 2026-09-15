@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Testing Page</title>
+    <style>
+        /* Basic reset and styling for testing */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #0070f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #0051a8;
+        }
+        .hidden-test {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e6f7ff;
+            border-left: 4px solid #1890ff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Test Environment</h1>
+        <p>Use this page to verify styles, scripts, and basic element rendering.</p>
+    </header>
+
+    <main>
+        <!-- Text & Structure Test -->
+        <section class="card">
+            <h2>1. Element Rendering Test</h2>
+            <p>This is a standard paragraph element. It helps check line height, font families, and container margins.</p>
+            <ul>
+                <li>Unordered list item A</li>
+                <li>Unordered list item B</li>
+            </ul>
+        </section>
+
+        <!-- JavaScript & Interactivity Test -->
+        <section class="card">
+            <h2>2. Interactive Component Test</h2>
+            <p>Click the button below to test DOM manipulation and standard JavaScript event execution.</p>
+            <button id="testBtn">Click Me</button>
+            <div id="testOutput" class="hidden-test">
+                <strong>Success!</strong> The JavaScript event listener is working perfectly.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>HTML5 Testing Template &copy; 2026</small></p>
+    </footer>
+
+    <script>
+        // Simple JavaScript execution test
+        document.getElementById('testBtn').addEventListener('click', function() {
+            const output = document.getElementById('testOutput');
+            if (output.style.display === 'block') {
+                output.style.display = 'none';
+                this.textContent = 'Click Me';
+            } else {
+                output.style.display = 'block';
+                this.textContent = 'Hide Message';
+            }
+        });
+    </script>
+</body>
+</html>
